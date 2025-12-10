@@ -1,0 +1,48 @@
+.game {
+  display: flex;
+  justify-content: center;
+  gap: 40px;
+}
+
+.game-board {
+  display: grid;
+  grid-template-columns: repeat(3, auto);
+}
+.status {
+  margin-bottom: 16px;
+  font-size: 20px;
+  font-weight: 600;
+}
+
+.square {
+  background: white;
+  border: 2px solid #333;
+  width: 70px;
+  height: 70px;
+  font-size: 36px;
+  font-weight: bold;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.square:hover {
+  background: #f0f0f0;
+}
+
+.game-info ol {
+  padding: 0;
+  list-style: none;
+  margin-top: 0;
+}
+
+.game-info li {
+  margin-bottom: 6px;
+}
+
+button {
+  cursor: pointer;
+  padding: 6px 10px;
+  font-size: 14px;
+}
