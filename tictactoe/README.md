@@ -29,13 +29,6 @@ https://your-demo-link.com
 
 ## 📦 Installation & Setup
 
-Clone the repository:
-
-```bash
-git clone https://github.com/your-username/tictactoe-react.git
-cd tictactoe-react
-```
-
 Install dependencies:
 
 ```bash
