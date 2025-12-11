@@ -1,73 +1,98 @@
-# React + TypeScript + Vite
+# 🎮 Tic-Tac-Toe (React)
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+A modern, optimized version of the classic **Tic-Tac-Toe** game built using **React**.
+This project demonstrates clean component architecture, React performance optimizations, and an interactive UI.
 
-Currently, two official plugins are available:
+## 🖥️ Demo
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Babel](https://babeljs.io/) (or [oxc](https://oxc.rs) when used in [rolldown-vite](https://vite.dev/guide/rolldown)) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+You can add a link here later (e.g., Vercel/Netlify):
 
-## React Compiler
-
-The React Compiler is not enabled on this template because of its impact on dev & build performances. To add it, see [this documentation](https://react.dev/learn/react-compiler/installation).
-
-## Expanding the ESLint configuration
-
-If you are developing a production application, we recommend updating the configuration to enable type-aware lint rules:
-
-```js
-export default defineConfig([
-  globalIgnores(['dist']),
-  {
-    files: ['**/*.{ts,tsx}'],
-    extends: [
-      // Other configs...
-
-      // Remove tseslint.configs.recommended and replace with this
-      tseslint.configs.recommendedTypeChecked,
-      // Alternatively, use this for stricter rules
-      tseslint.configs.strictTypeChecked,
-      // Optionally, add this for stylistic rules
-      tseslint.configs.stylisticTypeChecked,
-
-      // Other configs...
-    ],
-    languageOptions: {
-      parserOptions: {
-        project: ['./tsconfig.node.json', './tsconfig.app.json'],
-        tsconfigRootDir: import.meta.dirname,
-      },
-      // other options...
-    },
-  },
-])
+```
+https://your-demo-link.com
 ```
 
-You can also install [eslint-plugin-react-x](https://github.com/Rel1cx/eslint-react/tree/main/packages/plugins/eslint-plugin-react-x) and [eslint-plugin-react-dom](https://github.com/Rel1cx/eslint-react/tree/main/packages/plugins/eslint-plugin-react-dom) for React-specific lint rules:
+## 🚀 Features
 
-```js
-// eslint.config.js
-import reactX from 'eslint-plugin-react-x'
-import reactDom from 'eslint-plugin-react-dom'
+* 🎲 **Classic Tic-Tac-Toe gameplay**
+* ⚡ **Optimized rendering** using `React.memo`, `useCallback`, and `useMemo`
+* 🧠 **Winner detection**
+* 🕒 **Move history & time travel**
+* 🎨 **Clean, responsive UI**
+* 💡 **Simple, easy-to-read code structure**
 
-export default defineConfig([
-  globalIgnores(['dist']),
-  {
-    files: ['**/*.{ts,tsx}'],
-    extends: [
-      // Other configs...
-      // Enable lint rules for React
-      reactX.configs['recommended-typescript'],
-      // Enable lint rules for React DOM
-      reactDom.configs.recommended,
-    ],
-    languageOptions: {
-      parserOptions: {
-        project: ['./tsconfig.node.json', './tsconfig.app.json'],
-        tsconfigRootDir: import.meta.dirname,
-      },
-      // other options...
-    },
-  },
-])
+## 🛠️ Tech Stack
+
+* **React**
+* **JavaScript (ES6+)**
+* **CSS**
+* React Hooks (`useState`, `useMemo`, `useCallback`)
+
+## 📦 Installation & Setup
+
+Clone the repository:
+
+```bash
+git clone https://github.com/your-username/tictactoe-react.git
+cd tictactoe-react
 ```
+
+Install dependencies:
+
+```bash
+npm install
+```
+
+Run the app:
+
+```bash
+npm start
+```
+
+The game will open at:
+
+```
+http://localhost:3000
+```
+
+## 🧠 Optimizations Used
+
+### ✔ Memoized Square Component
+
+Prevents unnecessary re-renders:
+
+```jsx
+const Square = React.memo(function Square({ value, onSquareClick }) {
+  return <button className="square" onClick={onSquareClick}>{value}</button>;
+});
+```
+
+### ✔ Stable Callbacks
+
+```jsx
+const handleClick = useCallback((i) => { ... }, [winner, squares, xIsNext]);
+```
+
+### ✔ Cached Winner Calculation
+
+```jsx
+const winner = useMemo(() => calculateWinner(squares), [squares]);
+```
+
+### ✔ Grid-Based Board UI (CSS)
+
+```css
+.board {
+  display: grid;
+  grid-template-columns: repeat(3, 70px);
+}
+```
+
+## 🤝 Contributing
+
+Contributions are welcome!
+Feel free to open issues or submit pull requests.
+
+## 📄 License
+
+This project is open-source and available under the **MIT License**.
+
