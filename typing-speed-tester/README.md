@@ -1,73 +1,51 @@
-# React + TypeScript + Vite
+# Typing Speed Tester
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+A simple web application that helps users measure their typing speed and accuracy in real time.
 
-Currently, two official plugins are available:
+## Features
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Babel](https://babeljs.io/) (or [oxc](https://oxc.rs) when used in [rolldown-vite](https://vite.dev/guide/rolldown)) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+* Displays a random text for typing practice
+* Calculates typing speed in Words Per Minute (WPM)
+* Tracks typing accuracy
+* Real time feedback as the user types
+* Timer based test session
+* Responsive and lightweight UI
 
-## React Compiler
+## Tech Stack
 
-The React Compiler is not enabled on this template because of its impact on dev & build performances. To add it, see [this documentation](https://react.dev/learn/react-compiler/installation).
+* React
+* Vite
+* Typescript
+* CSS
 
-## Expanding the ESLint configuration
+## How It Works
 
-If you are developing a production application, we recommend updating the configuration to enable type-aware lint rules:
+1. The app presents a predefined or randomly generated text.
+2. The user starts typing and the timer begins automatically.
+3. WPM is calculated based on correctly typed characters.
+4. Accuracy is calculated by comparing user input with the reference text.
+5. Results are shown once the timer ends or the test is completed.
 
-```js
-export default defineConfig([
-  globalIgnores(['dist']),
-  {
-    files: ['**/*.{ts,tsx}'],
-    extends: [
-      // Other configs...
+## Getting Started
 
-      // Remove tseslint.configs.recommended and replace with this
-      tseslint.configs.recommendedTypeChecked,
-      // Alternatively, use this for stricter rules
-      tseslint.configs.strictTypeChecked,
-      // Optionally, add this for stylistic rules
-      tseslint.configs.stylisticTypeChecked,
+Install dependencies and start the development server.
 
-      // Other configs...
-    ],
-    languageOptions: {
-      parserOptions: {
-        project: ['./tsconfig.node.json', './tsconfig.app.json'],
-        tsconfigRootDir: import.meta.dirname,
-      },
-      // other options...
-    },
-  },
-])
+```bash
+npm install
+npm run dev
 ```
 
-You can also install [eslint-plugin-react-x](https://github.com/Rel1cx/eslint-react/tree/main/packages/plugins/eslint-plugin-react-x) and [eslint-plugin-react-dom](https://github.com/Rel1cx/eslint-react/tree/main/packages/plugins/eslint-plugin-react-dom) for React-specific lint rules:
+Open the local server URL shown in the terminal to view the app in the browser.
 
-```js
-// eslint.config.js
-import reactX from 'eslint-plugin-react-x'
-import reactDom from 'eslint-plugin-react-dom'
+## Future Improvements
 
-export default defineConfig([
-  globalIgnores(['dist']),
-  {
-    files: ['**/*.{ts,tsx}'],
-    extends: [
-      // Other configs...
-      // Enable lint rules for React
-      reactX.configs['recommended-typescript'],
-      // Enable lint rules for React DOM
-      reactDom.configs.recommended,
-    ],
-    languageOptions: {
-      parserOptions: {
-        project: ['./tsconfig.node.json', './tsconfig.app.json'],
-        tsconfigRootDir: import.meta.dirname,
-      },
-      // other options...
-    },
-  },
-])
-```
+* Multiple difficulty levels
+* Custom time limits
+* Dark mode
+* Keyboard heatmap and error highlights
+* Result history and progress tracking
+
+## License
+
+This project is open source and available for learning and practice purposes.
+
